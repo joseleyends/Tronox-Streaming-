@@ -5,95 +5,90 @@
   <title>Venta de Cuentas Streaming</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* Fondo animado moderno con gradiente y partículas */
     body {
-      background: #191919;
-      color: #fff;
-      font-family: Arial, sans-serif;
       margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    }
+    #particles-js {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      z-index: 0;
     }
     header {
-      background: #e50914;
-      padding: 20px;
+      background: rgba(36,36,36,0.85);
+      padding: 30px 10px 18px 10px;
       text-align: center;
       font-size: 2em;
       font-weight: bold;
       letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+      border-bottom: 2px solid #e50914;
     }
-    .section {
-      max-width: 350px;
-      margin: 40px auto 20px auto;
-      background: #222;
-      border-radius: 10px;
-      padding: 25px 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    .sub-header {
       text-align: center;
-    }
-    .section h2 {
-      color: #e50914;
-      margin-bottom: 12px;
-    }
-    .section label {
-      text-align: left;
-      display: block;
-      margin-top: 10px;
-      margin-bottom: 5px;
-    }
-    .section input[type="text"], .section input[type="password"] {
-      width: 100%;
-      padding: 8px;
-      border: none;
-      border-radius: 4px;
-      margin-bottom: 12px;
-      font-size: 1em;
-      background: #191919;
-      color: #fff;
-    }
-    .section button[type="submit"] {
-      background: #e50914;
-      color: #fff;
-      border: none;
-      padding: 10px 25px;
-      border-radius: 5px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .section a {
-      color: #25d366;
-      text-decoration: underline;
+      font-size: 1.4em;
+      padding: 15px 10px;
+      background: rgba(36,36,36,0.7);
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 1;
+      border-bottom: 1px solid #444;
     }
     .catalogo {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 22px;
       justify-content: center;
-      margin: 40px 0;
+      margin: 30px 0 40px 0;
+      position: relative;
+      z-index: 1;
     }
     .card {
-      background: #222;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      background: rgba(34,34,34,0.98);
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.28);
       width: 260px;
-      padding: 20px;
+      padding: 24px 18px 18px 18px;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      transition: transform 0.17s, box-shadow 0.17s;
+      position: relative;
+    }
+    .card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 28px rgba(229,9,20,0.15), 0 2px 8px rgba(0,0,0,0.18);
     }
     .card img {
       width: 80px;
+      height: 80px;
+      object-fit: contain;
       margin-bottom: 10px;
       background: #fff;
-      border-radius: 5px;
+      border-radius: 9px;
       padding: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     }
     .servicio {
-      font-size: 1.2em;
+      font-size: 1.15em;
       font-weight: bold;
-      margin-bottom: 10px;
+      margin-bottom: 9px;
+      margin-top: 2px;
     }
     .precio {
       color: #e50914;
-      font-size: 1.1em;
-      margin-bottom: 8px;
+      font-size: 1.08em;
+      margin-bottom: 7px;
+      font-weight: bold;
     }
     .detalle {
       font-size: 1em;
@@ -105,96 +100,173 @@
       color: #fff;
       border: none;
       padding: 10px 25px;
-      border-radius: 5px;
+      border-radius: 6px;
       font-size: 1em;
       cursor: pointer;
       transition: background 0.2s;
       text-decoration: none;
       display: inline-block;
       margin-top: 10px;
+      box-shadow: 0 2px 8px rgba(37,211,102,0.12);
     }
-    .btn-comprar:disabled {
-      background: #444;
-      cursor: not-allowed;
+    .btn-comprar:active {
+      background: #1ea65c;
     }
     footer {
-      background: #222;
+      background: rgba(36,36,36,0.93);
       text-align: center;
       padding: 14px;
       color: #bbb;
       margin-top: 40px;
+      font-size: 1em;
+      position: relative;
+      z-index: 1;
     }
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
+      .catalogo {
+        gap: 16px;
+      }
+      .card {
+        width: 48vw;
+        min-width: 200px;
+        max-width: 330px;
+      }
+    }
+    @media (max-width: 600px) {
       .catalogo {
         flex-direction: column;
         align-items: center;
       }
       .card {
-        width: 90%;
-      }
-      .section {
-        width: 90%;
+        width: 92vw;
+        min-width: 180px;
         max-width: 400px;
+      }
+      header {
+        font-size: 1.35em;
+      }
+      .sub-header {
+        font-size: 1em;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Fondo animado con partículas -->
+  <div id="particles-js"></div>
+
   <header>
     🚀 Venta de Cuentas Streaming
   </header>
-
-  <!-- Sección de Inicio de Sesión -->
-  <div class="section" id="login">
-    <h2>🔑 Iniciar Sesión</h2>
-    <form>
-      <label for="user">Usuario o correo:</label>
-      <input type="text" id="user" name="user" placeholder="Correo o usuario">
-      <label for="pass">Contraseña:</label>
-      <input type="password" id="pass" name="pass" placeholder="Contraseña">
-      <button type="submit">Entrar</button>
-    </form>
-    <small>¿No tienes cuenta? <a href="#registro">Regístrate aquí</a></small>
+  <div class="sub-header">
+    Bienvenido, tenemos los mejores precios para ti
   </div>
 
   <!-- Catálogo de cuentas de Streaming -->
   <div class="catalogo">
-    <!-- Tarjeta Disney+ -->
+    <!-- Disney+ -->
     <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="Disney+">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="Disney+ logo">
       <div class="servicio">Disney+</div>
       <div class="precio">$10,000 por pantalla</div>
       <div class="detalle">Pantalla individual - HD</div>
       <a class="btn-comprar" href="https://wa.me/573115409647?text=Hola,%20quiero%20comprar%20una%20pantalla%20de%20Disney+%20por%20$10,000" target="_blank">Comprar por WhatsApp</a>
     </div>
-    <!-- Tarjeta Netflix -->
+    <!-- Netflix -->
     <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix logo">
       <div class="servicio">Netflix Premium</div>
       <div class="precio">$10,000 por pantalla</div>
       <div class="detalle">Pantalla individual - Ultra HD</div>
       <a class="btn-comprar" href="https://wa.me/573115409647?text=Hola,%20quiero%20comprar%20una%20pantalla%20de%20Netflix%20Premium%20por%20$10,000" target="_blank">Comprar por WhatsApp</a>
     </div>
-    <!-- Tarjeta Amazon Prime Video -->
+    <!-- Amazon Prime Video -->
     <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Amazon_Prime_Video_logo.svg/512px-Amazon_Prime_Video_logo.svg.png" alt="Amazon Prime Video">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Amazon_Prime_Video_logo.svg/512px-Amazon_Prime_Video_logo.svg.png" alt="Amazon Prime Video logo">
       <div class="servicio">Amazon Prime Video</div>
       <div class="precio">$10,000 por pantalla</div>
       <div class="detalle">Pantalla individual - HD</div>
       <a class="btn-comprar" href="https://wa.me/573115409647?text=Hola,%20quiero%20comprar%20una%20pantalla%20de%20Amazon%20Prime%20Video%20por%20$10,000" target="_blank">Comprar por WhatsApp</a>
     </div>
-    <!-- Tarjeta HBO Max -->
+    <!-- HBO Max -->
     <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/HBO_Max_Logo.svg/512px-HBO_Max_Logo.svg.png" alt="HBO Max">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/HBO_Max_Logo.svg/512px-HBO_Max_Logo.svg.png" alt="HBO Max logo">
       <div class="servicio">HBO Max</div>
       <div class="precio">$10,000 por pantalla</div>
       <div class="detalle">Pantalla individual - HD</div>
       <a class="btn-comprar" href="https://wa.me/573115409647?text=Hola,%20quiero%20comprar%20una%20pantalla%20de%20HBO%20Max%20por%20$10,000" target="_blank">Comprar por WhatsApp</a>
+    </div>
+    <!-- Spotify -->
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify logo">
+      <div class="servicio">Spotify</div>
+      <div class="precio">$6,000 por cuenta</div>
+      <div class="detalle">Cuenta individual - Premium</div>
+      <a class="btn-comprar" href="https://wa.me/573115409647?text=Hola,%20quiero%20comprar%20una%20cuenta%20de%20Spotify%20por%20$6,000" target="_blank">Comprar por WhatsApp</a>
+    </div>
+    <!-- YouTube Premium -->
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_Logo_2017.svg" alt="YouTube Premium logo">
+      <div class="servicio">YouTube Premium</div>
+      <div class="precio">$8,000 por cuenta</div>
+      <div class="detalle">Cuenta individual - Premium</div>
+      <a class="btn-comprar" href="https://wa.me/573115409647?text=Hola,%20quiero%20comprar%20una%20cuenta%20de%20YouTube%20Premium%20por%20$8,000" target="_blank">Comprar por WhatsApp</a>
+    </div>
+    <!-- Crunchyroll -->
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Crunchyroll_logo.svg" alt="Crunchyroll logo">
+      <div class="servicio">Crunchyroll</div>
+      <div class="precio">$5,000 por cuenta</div>
+      <div class="detalle">Cuenta individual - Premium</div>
+      <a class="btn-comprar" href="https://wa.me/573115409647?text=Hola,%20quiero%20comprar%20una%20cuenta%20de%20Crunchyroll%20por%20$5,000" target="_blank">Comprar por WhatsApp</a>
     </div>
   </div>
 
   <footer>
     © 2025 Venta de Cuentas Streaming | Contacto: <strong>ventas@tronox.com</strong>
   </footer>
+
+  <!-- Particles.js CDN y configuración -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    /* Configuración para el fondo animado */
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 52, "density": { "enable": true, "value_area": 600 } },
+        "color": { "value": ["#e50914", "#25d366", "#fbbc05", "#1db954", "#fff"] },
+        "shape": { "type": "circle" },
+        "opacity": {
+          "value": 0.33,
+          "random": true,
+          "anim": { "enable": false }
+        },
+        "size": {
+          "value": 8,
+          "random": true,
+          "anim": { "enable": true, "speed": 4, "size_min": 2, "sync": false }
+        },
+        "line_linked": {
+          "enable": false
+        },
+        "move": {
+          "enable": true,
+          "speed": 2.2,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" },
+          "resize": true
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
