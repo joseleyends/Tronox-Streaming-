@@ -14,21 +14,39 @@
     header {
       background-color: #000;
       padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      margin: 0;
+      color: #e50914;
       font-size: 24px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #fff;
       font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
       color: #e50914;
     }
     .section {
       padding: 20px;
     }
     .section h2 {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       color: #e50914;
     }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 10px;
+      gap: 12px;
     }
     .grid img {
       width: 100%;
@@ -38,27 +56,65 @@
     .grid img:hover {
       transform: scale(1.05);
     }
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #777;
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
-  <header>🚀 Tronox Streaming</header>
+  <!-- Barra superior -->
+  <header>
+    <h1>🚀 Tronox</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#peliculas">Películas</a>
+      <a href="#series">Series</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-  <div class="section">
+  <!-- Sección Inicio -->
+  <div class="section" id="inicio">
+    <h2>✨ Bienvenido a Tronox Streaming</h2>
+    <p>Disfruta de películas y series en línea con el mejor estilo 🚀</p>
+  </div>
+
+  <!-- Sección Películas -->
+  <div class="section" id="peliculas">
     <h2>🎬 Películas destacadas</h2>
     <div class="grid">
-      <img src="https://via.placeholder.com/300x150/FF0000/FFFFFF?text=Película+1" alt="Pelicula 1">
-      <img src="https://via.placeholder.com/300x150/0000FF/FFFFFF?text=Película+2" alt="Pelicula 2">
-      <img src="https://via.placeholder.com/300x150/008000/FFFFFF?text=Película+3" alt="Pelicula 3">
+      <img src="https://picsum.photos/300/150?random=1" alt="Película 1">
+      <img src="https://picsum.photos/300/150?random=2" alt="Película 2">
+      <img src="https://picsum.photos/300/150?random=3" alt="Película 3">
+      <img src="https://picsum.photos/300/150?random=7" alt="Película 4">
     </div>
   </div>
 
-  <div class="section">
+  <!-- Sección Series -->
+  <div class="section" id="series">
     <h2>📺 Series recomendadas</h2>
     <div class="grid">
-      <img src="https://via.placeholder.com/300x150/FFA500/FFFFFF?text=Serie+1" alt="Serie 1">
-      <img src="https://via.placeholder.com/300x150/800080/FFFFFF?text=Serie+2" alt="Serie 2">
-      <img src="https://via.placeholder.com/300x150/008080/FFFFFF?text=Serie+3" alt="Serie 3">
+      <img src="https://picsum.photos/300/150?random=4" alt="Serie 1">
+      <img src="https://picsum.photos/300/150?random=5" alt="Serie 2">
+      <img src="https://picsum.photos/300/150?random=6" alt="Serie 3">
+      <img src="https://picsum.photos/300/150?random=8" alt="Serie 4">
     </div>
   </div>
+
+  <!-- Sección Contacto -->
+  <div class="section" id="contacto">
+    <h2>📩 Contáctanos</h2>
+    <p>¿Tienes dudas o sugerencias? Escríbenos a: <strong>soporte@tronox.com</strong></p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Tronox Streaming | Creado por Jose 🚀
+  </footer>
 </body>
 </html>
