@@ -2,141 +2,121 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <title>Venta de Cuentas Streaming</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tronox Streaming</title>
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #141414;
+      background: #191919;
       color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
     }
     header {
-      background-color: #000;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    header h1 {
-      margin: 0;
-      color: #e50914;
-      font-size: 24px;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #e50914;
-    }
-    .section {
+      background: #e50914;
       padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
     }
-    .section h2 {
-      margin-bottom: 15px;
-      color: #e50914;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 12px;
-    }
-    .grid img {
-      width: 100%;
-      border-radius: 8px;
-      transition: transform 0.3s;
-    }
-    .grid img:hover {
-      transform: scale(1.05);
-    }
-    .video-container {
+    .catalogo {
       display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
       justify-content: center;
-      margin: 20px 0;
+      margin: 40px 0;
     }
-    video {
-      width: 90%;
-      max-width: 800px;
+    .card {
+      background: #222;
       border-radius: 10px;
-      outline: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      width: 260px;
+      padding: 20px;
+      text-align: center;
+    }
+    .card img {
+      width: 70px;
+      margin-bottom: 10px;
+    }
+    .servicio {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .precio {
+      color: #e50914;
+      font-size: 1.1em;
+      margin-bottom: 8px;
+    }
+    .stock {
+      font-size: 0.9em;
+      margin-bottom: 12px;
+    }
+    .btn-comprar {
+      background: #e50914;
+      color: #fff;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-comprar:disabled {
+      background: #444;
+      cursor: not-allowed;
     }
     footer {
-      background-color: #000;
+      background: #222;
       text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      color: #777;
-      margin-top: 30px;
+      padding: 14px;
+      color: #bbb;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <!-- Barra superior -->
   <header>
-    <h1>🚀 Tronox</h1>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#peliculas">Películas</a>
-      <a href="#series">Series</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    🚀 Venta de Cuentas Streaming
   </header>
 
-  <!-- Sección Inicio -->
-  <div class="section" id="inicio">
-    <h2>✨ Bienvenido a Tronox Streaming</h2>
-    <p>Disfruta de películas y series en línea con el mejor estilo 🚀</p>
-  </div>
-
-  <!-- Reproductor de video -->
-  <div class="section">
-    <h2>🎥 Mira un avance</h2>
-    <div class="video-container">
-      <video controls>
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        Tu navegador no soporta video.
-      </video>
+  <div class="catalogo">
+    <!-- Tarjeta 1 -->
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
+      <div class="servicio">Netflix Premium</div>
+      <div class="precio">$5 USD</div>
+      <div class="stock">Stock: <b>12</b></div>
+      <button class="btn-comprar">Comprar</button>
     </div>
-  </div>
-
-  <!-- Sección Películas -->
-  <div class="section" id="peliculas">
-    <h2>🎬 Películas destacadas</h2>
-    <div class="grid">
-      <img src="https://picsum.photos/300/150?random=10" alt="Película 1">
-      <img src="https://picsum.photos/300/150?random=11" alt="Película 2">
-      <img src="https://picsum.photos/300/150?random=12" alt="Película 3">
-      <img src="https://picsum.photos/300/150?random=13" alt="Película 4">
+    <!-- Tarjeta 2 -->
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="Disney+">
+      <div class="servicio">Disney+</div>
+      <div class="precio">$4 USD</div>
+      <div class="stock">Stock: <b>8</b></div>
+      <button class="btn-comprar">Comprar</button>
     </div>
-  </div>
-
-  <!-- Sección Series -->
-  <div class="section" id="series">
-    <h2>📺 Series recomendadas</h2>
-    <div class="grid">
-      <img src="https://picsum.photos/300/150?random=14" alt="Serie 1">
-      <img src="https://picsum.photos/300/150?random=15" alt="Serie 2">
-      <img src="https://picsum.photos/300/150?random=16" alt="Serie 3">
-      <img src="https://picsum.photos/300/150?random=17" alt="Serie 4">
+    <!-- Tarjeta 3 -->
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/HBO_Max_Logo.svg" alt="HBO Max">
+      <div class="servicio">HBO Max</div>
+      <div class="precio">$6 USD</div>
+      <div class="stock">Stock: <b>3</b></div>
+      <button class="btn-comprar">Comprar</button>
     </div>
+    <!-- Tarjeta 4 -->
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Amazon_Prime_Video_logo.svg" alt="Prime Video">
+      <div class="servicio">Prime Video</div>
+      <div class="precio">$5 USD</div>
+      <div class="stock">Stock: <b>0</b></div>
+      <button class="btn-comprar" disabled>Agotado</button>
+    </div>
+    <!-- Puedes agregar más tarjetas según tus servicios -->
   </div>
 
-  <!-- Sección Contacto -->
-  <div class="section" id="contacto">
-    <h2>📩 Contáctanos</h2>
-    <p>¿Tienes dudas o sugerencias? Escríbenos a: <strong>soporte@tronox.com</strong></p>
-  </div>
-
-  <!-- Footer -->
   <footer>
-    © 2025 Tronox Streaming | Creado por Jose 🚀
+    © 2025 Venta de Cuentas Streaming | Contacto: <strong>ventas@tronox.com</strong>
   </footer>
 </body>
 </html>
