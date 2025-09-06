@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #121212;
+      background-color: #141414;
       color: #fff;
     }
     header {
@@ -56,6 +56,17 @@
     .grid img:hover {
       transform: scale(1.05);
     }
+    .video-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    video {
+      width: 90%;
+      max-width: 800px;
+      border-radius: 10px;
+      outline: none;
+    }
     footer {
       background-color: #000;
       text-align: center;
@@ -84,14 +95,25 @@
     <p>Disfruta de películas y series en línea con el mejor estilo 🚀</p>
   </div>
 
+  <!-- Reproductor de video -->
+  <div class="section">
+    <h2>🎥 Mira un avance</h2>
+    <div class="video-container">
+      <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Tu navegador no soporta video.
+      </video>
+    </div>
+  </div>
+
   <!-- Sección Películas -->
   <div class="section" id="peliculas">
     <h2>🎬 Películas destacadas</h2>
     <div class="grid">
-      <img src="https://picsum.photos/300/150?random=1" alt="Película 1">
-      <img src="https://picsum.photos/300/150?random=2" alt="Película 2">
-      <img src="https://picsum.photos/300/150?random=3" alt="Película 3">
-      <img src="https://picsum.photos/300/150?random=7" alt="Película 4">
+      <img src="https://picsum.photos/300/150?random=10" alt="Película 1">
+      <img src="https://picsum.photos/300/150?random=11" alt="Película 2">
+      <img src="https://picsum.photos/300/150?random=12" alt="Película 3">
+      <img src="https://picsum.photos/300/150?random=13" alt="Película 4">
     </div>
   </div>
 
@@ -99,10 +121,10 @@
   <div class="section" id="series">
     <h2>📺 Series recomendadas</h2>
     <div class="grid">
-      <img src="https://picsum.photos/300/150?random=4" alt="Serie 1">
-      <img src="https://picsum.photos/300/150?random=5" alt="Serie 2">
-      <img src="https://picsum.photos/300/150?random=6" alt="Serie 3">
-      <img src="https://picsum.photos/300/150?random=8" alt="Serie 4">
+      <img src="https://picsum.photos/300/150?random=14" alt="Serie 1">
+      <img src="https://picsum.photos/300/150?random=15" alt="Serie 2">
+      <img src="https://picsum.photos/300/150?random=16" alt="Serie 3">
+      <img src="https://picsum.photos/300/150?random=17" alt="Serie 4">
     </div>
   </div>
 
